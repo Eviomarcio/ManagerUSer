@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "A+DOkhDGnY+lxEVstYijjJVYJt9qwXkA1i4vgqUyFgsZuPtd/W+t/VVUFZBru9vfl3URX1X5d5DzR1iGWQlrWg==",
+  "dgSpecHash": "03ZjQnVfCjk0GsW4Ke7r/9ulZjJDBYPNzQ7zI8zMOAsjslhW22CZjSCK8PkgevOhj5/h+HfXfZQneetb8/fWQA==",
   "success": true,
   "projectFilePath": "C:\\Users\\evio.joaquim\\Documents\\WorkSpace\\.Net\\Manager\\src\\Manager.Domain\\Manager.Domain.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\evio.joaquim\\.nuget\\packages\\fluentvalidation\\10.1.0\\fluentvalidation.10.1.0.nupkg.sha512"
+  ],
   "logs": []
 }
