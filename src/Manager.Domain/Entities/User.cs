@@ -1,6 +1,6 @@
-using System;
 using System.Collections.Generic;
 using Manager.Domain.Validator;
+using Manager.Core.Exceptions;
 
 namespace Manager.Domain.Entities
 {
@@ -51,7 +51,7 @@ namespace Manager.Domain.Entities
                     _errors.Add(error.ErrorMessage);
                 }
 
-                throw new Exception("Alguns compos estão invalidos, por favor corrija-os!" + _errors);
+                throw new DomainException("Alguns compos estão invalidos, por favor corrija-os!" , _errors);
             }
 
             return true;
