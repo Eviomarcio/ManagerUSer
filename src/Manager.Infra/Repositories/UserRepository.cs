@@ -1,9 +1,12 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
+using Manager.Domain.Entities;
 using Manager.Infra.interfaces;
 using Maneger.Infra.Context;
 using Maneger.Infra.Respositories;
+using Microsoft.EntityFrameworkCore;
 
 namespace Manager.Infra.Repositories
 {
@@ -33,6 +36,11 @@ namespace Manager.Infra.Repositories
                                          .AsNoTracking()
                                          .ToListAsync();
             return allUsers;
+        }
+
+        public Task<List<User>> SearchByName(string name)
+        {
+            throw new NotImplementedException();
         }
 
         public async Task<List<User>> SearchByNome(string name)

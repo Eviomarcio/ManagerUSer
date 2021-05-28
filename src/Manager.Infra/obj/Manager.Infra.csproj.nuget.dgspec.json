@@ -4,14 +4,14 @@
     "C:\\Users\\evio.joaquim\\Documents\\WorkSpace\\.Net\\Manager\\src\\Manager.Infra\\Manager.Infra.csproj": {}
   },
   "projects": {
-    "C:\\Users\\evio.joaquim\\Documents\\WorkSpace\\.Net\\Manager\\src\\Manager.Infra\\Manager.Infra.csproj": {
+    "C:\\Users\\evio.joaquim\\Documents\\WorkSpace\\.Net\\Manager\\src\\Manager.Domain\\Manager.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\evio.joaquim\\Documents\\WorkSpace\\.Net\\Manager\\src\\Manager.Infra\\Manager.Infra.csproj",
-        "projectName": "Manager.Infra",
-        "projectPath": "C:\\Users\\evio.joaquim\\Documents\\WorkSpace\\.Net\\Manager\\src\\Manager.Infra\\Manager.Infra.csproj",
+        "projectUniqueName": "C:\\Users\\evio.joaquim\\Documents\\WorkSpace\\.Net\\Manager\\src\\Manager.Domain\\Manager.Domain.csproj",
+        "projectName": "Manager.Domain",
+        "projectPath": "C:\\Users\\evio.joaquim\\Documents\\WorkSpace\\.Net\\Manager\\src\\Manager.Domain\\Manager.Domain.csproj",
         "packagesPath": "C:\\Users\\evio.joaquim\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\evio.joaquim\\Documents\\WorkSpace\\.Net\\Manager\\src\\Manager.Infra\\obj\\",
+        "outputPath": "C:\\Users\\evio.joaquim\\Documents\\WorkSpace\\.Net\\Manager\\src\\Manager.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\evio.joaquim\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -38,11 +38,75 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "fluentvalidation": {
+              "target": "Package",
+              "version": "[10.1.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\evio.joaquim\\Documents\\WorkSpace\\.Net\\Manager\\src\\Manager.Infra\\Manager.Infra.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\evio.joaquim\\Documents\\WorkSpace\\.Net\\Manager\\src\\Manager.Infra\\Manager.Infra.csproj",
+        "projectName": "Manager.Infra",
+        "projectPath": "C:\\Users\\evio.joaquim\\Documents\\WorkSpace\\.Net\\Manager\\src\\Manager.Infra\\Manager.Infra.csproj",
+        "packagesPath": "C:\\Users\\evio.joaquim\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\evio.joaquim\\Documents\\WorkSpace\\.Net\\Manager\\src\\Manager.Infra\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\evio.joaquim\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\evio.joaquim\\Documents\\WorkSpace\\.Net\\Manager\\src\\Manager.Domain\\Manager.Domain.csproj": {
+                "projectPath": "C:\\Users\\evio.joaquim\\Documents\\WorkSpace\\.Net\\Manager\\src\\Manager.Domain\\Manager.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[5.0.6, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
               "version": "[5.0.6, )"
             },

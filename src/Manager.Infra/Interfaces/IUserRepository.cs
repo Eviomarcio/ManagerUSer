@@ -4,7 +4,7 @@ using Manager.Domain.Entities;
 
 namespace Manager.Infra.interfaces
 {
-    public interface IUserRepository : IBaseRepository<UserPreferenceCategory>
+    public interface IUserRepository : IBaseRepository<User>
     {
         Task<User> GetByEmail(string email);
         Task<List<User>> SearchByEmail(string email);

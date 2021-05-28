@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using Manager.Domain.Entities;
 using Manager.Infra.interfaces;
 using Maneger.Infra.Context;
-using System.Globalization;
+using System.Collections.Generic;
 
 
 using Microsoft.EntityFrameworkCore;
@@ -13,15 +13,14 @@ namespace Maneger.Infra.Respositories
 {
     public class BaseRepository<T> : IBaseRepository<T> where T : Base
     {    
-        private readonly ManegerContext _context;
+        private readonly ManagerContext _context;
 
         public BaseRepository(ManagerContext context)
         {
-            _context - context; 
+            _context = context; 
         }
 
-        public virtual async Task<TaiwanCalendar> Create(T obj)
-        {
+        public virtual async Task<T> Create(T obj){
             _context.Add(obj);
             await _context.SaveChangesAsync();
 
@@ -49,19 +48,24 @@ namespace Maneger.Infra.Respositories
 
         public virtual async Task<T> Get(long id)
         {
-            var obj = await _contex.Set<T>()
+            var obj = await _context.Set<T>()
                                    .AsNoTracking()
-                                   .where(x => x.id == id)
+                                   .Where(x => x.Id == id)
                                    .ToListAsync();
 
             return obj.FirstOrDefault();
         }
 
-        public virtual async Task<T> Get()
+        public virtual async Task<List<T>> Get()
         {
             return await _context.Set<T>()
                                  .AsNoTracking()
                                  .ToListAsync();
+        }
+
+        Task<T> IBaseRepository<T>.Remove(long id)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }
