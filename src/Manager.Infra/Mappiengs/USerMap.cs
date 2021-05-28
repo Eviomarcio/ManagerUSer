@@ -14,8 +14,8 @@ namespace Manager.Infra.Mappiengs
             builder.HasKey(x => x.Id);
 
             builder.Property(x => x.Id)
-                 .UseIdentityColumn()
-                 .HasColumnType("bigint");
+                .UseIdentityColumn()
+                .HasColumnType("bigint");
 
             builder.Property(x => x.Name)
                 .IsRequired()
