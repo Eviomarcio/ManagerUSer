@@ -2,7 +2,7 @@ using System.Threading.Tasks;
 using Manager.Domain.Entities;
 using System.Collections.Generic;
 
-namespace Manager.Infra.interfaces 
+namespace Manager.Infra.Interfaces 
 {
    public interface IBaseRepository<T> where T : Base
    {
