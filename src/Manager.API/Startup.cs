@@ -2,10 +2,20 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
+using Manager.API.ViewModels;
+using Manager.Domain.Entities;
+using Manager.Infra.Context;
+using Manager.Infra.Interfaces;
+using Manager.Infra.Repositories;
+using Manager.Services.DTO;
+using Manager.Services.Interfaces;
+using Manager.Services.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -28,6 +38,25 @@ namespace Manager.API
         {
 
             services.AddControllers();
+
+            #region AutoMapper
+            var autoMapperConfig = new MapperConfiguration(config =>
+            {
+                config.CreateMap<User, UserDTO>().ReverseMap();
+                config.CreateMap<CreateUserViewModel, UserDTO>().ReverseMap();
+            });
+
+            services.AddSingleton(autoMapperConfig.CreateMapper());
+            #endregion AutoMapper
+
+            #region DependencyInjection
+            services.AddSingleton(d => Configuration);
+            //services.AddDbContext<ManagerContext>(options => options.UseNpgsql(Configuration["ConnectionString:USER_MANAGER"]), ServiceLifetime.Transient);
+            services.AddEntityFrameworkNpgsql (). AddDbContext <ManagerContext> (opt => opt.UseNpgsql (Configuration.GetConnectionString ("USER_MANAGER"))); 
+            services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IUserRepository, UserRepository>();
+            #endregion Dependency Injection
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Manager.API", Version = "v1" });
