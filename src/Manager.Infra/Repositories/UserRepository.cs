@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Manager.Domain.Entities;
-using Manager.Infra.interfaces;
-using Maneger.Infra.Context;
+using Manager.Infra.Interfaces;
+using Manager.Infra.Context;
 using Maneger.Infra.Respositories;
 using Microsoft.EntityFrameworkCore;
 

@@ -1,13 +1,10 @@
-using System.Dynamic;
 using System.Linq;
 using System.Threading.Tasks;
 using Manager.Domain.Entities;
-using Manager.Infra.interfaces;
-using Maneger.Infra.Context;
+using Manager.Infra.Context;
 using System.Collections.Generic;
-
-
 using Microsoft.EntityFrameworkCore;
+using Manager.Infra.Interfaces;
 
 namespace Maneger.Infra.Respositories
 {

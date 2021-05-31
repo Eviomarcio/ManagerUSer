@@ -1,9 +1,8 @@
-using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Manager.Domain.Entities;
-using Manager.Infra.Interfaces;
 
-namespace Manager.Infra.interfaces
+namespace Manager.Infra.Interfaces
 {
     public interface IUserRepository : IBaseRepository<User>
     {

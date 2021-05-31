@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using Manager.Core.Exceptions;
 using Manager.Domain.Entities;
-using Manager.Infra.interfaces;
+using Manager.Infra.Interfaces;
 using Manager.Services.DTO;
 using Manager.Services.Interfaces;
 

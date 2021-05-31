@@ -2,7 +2,7 @@ using Manager.Domain.Entities;
 using Manager.Infra.Mappiengs;
 using Microsoft.EntityFrameworkCore;
 
-namespace Maneger.Infra.Context
+namespace Manager.Infra.Context
 {
     public class ManagerContext : DbContext
     {

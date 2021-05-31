@@ -1,7 +1,6 @@
 using Manager.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Microsoft.Win32;
 
 namespace Manager.Infra.Mappiengs
 {
