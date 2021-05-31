@@ -1,7 +1,7 @@
 using System;
 using System.Threading.Tasks;
 using AutoMapper;
-using Manager.API.ViewModes;
+using Manager.API.ViewModels;
 using Manager.Core.Exceptions;
 using Manager.Services.DTO;
 using Manager.Services.Interfaces;
@@ -34,7 +34,7 @@ namespace Manager.API.Controllers
                 return Ok(new ResultViewModel{
                     Message = "Usúario craido com sucesso!.",
                     Success = true,
-                    Date = userCreated
+                    Data = userCreated
                 });
             }
             catch (DomainException ex)
