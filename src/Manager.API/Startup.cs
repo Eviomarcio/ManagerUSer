@@ -44,6 +44,7 @@ namespace Manager.API
             {
                 config.CreateMap<User, UserDTO>().ReverseMap();
                 config.CreateMap<CreateUserViewModel, UserDTO>().ReverseMap();
+                config.CreateMap<UpdateUserViewModel, UserDTO>().ReverseMap();
             });
 
             services.AddSingleton(autoMapperConfig.CreateMapper());
@@ -51,7 +52,6 @@ namespace Manager.API
 
             #region DependencyInjection
             services.AddSingleton(d => Configuration);
-            //services.AddDbContext<ManagerContext>(options => options.UseNpgsql(Configuration["ConnectionString:USER_MANAGER"]), ServiceLifetime.Transient);
             services.AddEntityFrameworkNpgsql (). AddDbContext <ManagerContext> (opt => opt.UseNpgsql (Configuration.GetConnectionString ("USER_MANAGER"))); 
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IUserRepository, UserRepository>();
